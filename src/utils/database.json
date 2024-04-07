@@ -1,0 +1,114 @@
+{
+    "roi_database": {
+      "Inputs_section": {
+        "annual_orders": 0,
+        "annual_customers": 0,
+        "aov": 0, 
+        "gross_margin": 0,
+        "Industry": "N/A",
+        "industry_category": "N/A"
+      },
+      "Industries": [
+        {
+          "name": "health_and_beauty",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "fashion",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "food_and_restaurants",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "home_and_garden",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "babies_and_kids",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "sports_and_outdoors",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "electronics_and_telecom",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "hotels",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "media_and_entertainment",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        },
+        {
+          "name": "shopping_and_malls",
+          "metrics": {
+            "Incremental_revenue_percentage": 0,
+            "Increase_in_aov_percentage": 0,
+            "Increase_in_purchases_percentage": 0,
+            "Membership_conversion_percentage": 0,
+            "referral_rate_percentage": 0
+          }
+        }
+      ]
+    }
+  }
