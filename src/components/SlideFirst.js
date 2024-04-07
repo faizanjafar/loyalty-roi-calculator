@@ -39,9 +39,9 @@ const SlideFirst = ({ onNext }) => {
   }, []);
 
   const gradients = {
-    ordersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.ordersValue / 1000000) * 100}%, #B20DFF ${(inputs.ordersValue / 1000000) * 100}%, #ccc 0%)`,
-    customersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.customersValue / 200000) * 100}%, #FFC700 ${(inputs.customersValue / 200000) * 80}%, #ccc 0%)`,
-    aovValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.aovValue / 500) * 100}%, #FFC700 ${(inputs.aovValue / 500) * 80}%, #ccc 0%)`,
+    ordersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.ordersValue / 10000000) * 100}%, #B20DFF ${(inputs.ordersValue / 1000000) * 80}%, #ccc 0%)`,
+    customersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.customersValue / 1000000) * 100}%, #FFC700 ${(inputs.customersValue / 200000) * 80}%, #ccc 0%)`,
+    aovValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.aovValue / 5000) * 100}%, #FFC700 ${(inputs.aovValue / 500) * 80}%, #ccc 0%)`,
   };
 
   const purchase_per_customer = localStorage.getItem("purchase_per_customer");
@@ -56,7 +56,7 @@ const SlideFirst = ({ onNext }) => {
           handleSliderChange={handleChange}
           name="ordersValue"
           gradient={gradients.ordersValue}
-          max={1000000}
+          max={10000000}
         />
         <Slider
           title="Your annual customers"
@@ -65,7 +65,7 @@ const SlideFirst = ({ onNext }) => {
           handleSliderChange={handleChange}
           name="customersValue"
           gradient={gradients.customersValue}
-          max={200000}
+          max={1000000}
         />
         <Slider
           title="AOV"
@@ -74,7 +74,7 @@ const SlideFirst = ({ onNext }) => {
           handleSliderChange={handleChange}
           name="aovValue"
           gradient={gradients.aovValue}
-          max={500}
+          max={5000}
         />
       </div>
       <div className="w-2/6 bg-[#2312DA] rounded-br-xl rounded-tr-xl p-4 h-full flex justify-between items-center flex-col">
@@ -84,7 +84,7 @@ const SlideFirst = ({ onNext }) => {
           </p>
         </div>
         <div className="flex flex-col gap-4 w-48">
-          <p className="text-white font-normal text-sm">
+          <p className="text-white font-medium text-md">
             Purchases per customers
           </p>
           <p className="text-white font-normal text-sm">

@@ -45,20 +45,19 @@ const Result = () => {
   const orders = firstSlide.ordersValue;
   const purchase_per_customer = localStorage.getItem("purchase_per_customer");
   const customers = firstSlide.customersValue;
-  console.log( aov, orders, purchase_per_customer, customers, margin, selectedStrategic)
 
   // Incremental Revenue Percentage
   const minIRP = (
     +orders *
     +aov *
-    margin *
-    selectedStrategic?.min_incremental_revenue_percentage
+    (margin / 100) *
+    (selectedStrategic?.min_incremental_revenue_percentage / 100)
   ).toFixed(0);
   const maxIRP = (
     +orders *
     +aov *
-    margin *
-    selectedStrategic?.max_incremental_revenue_percentage
+    (margin / 100) *
+    (selectedStrategic?.max_incremental_revenue_percentage / 100)
   ).toFixed(0);
 
   // Total Projected Annual Revenue
@@ -67,46 +66,43 @@ const Result = () => {
 
   // Increase in AOV
   const minIncreaseInAOV = (
-    (+aov * selectedStrategic?.min_Increase_in_aov_percentage) /
-    100
+    +aov * (selectedStrategic?.min_Increase_in_aov_percentage /
+      100)
   ).toFixed(2);
   const maxIncreaseInAOV = (
-    (+aov * selectedStrategic?.max_Increase_in_aov_percentage) /
-    100
+    +aov * (selectedStrategic?.max_Increase_in_aov_percentage /
+      100)
   ).toFixed(2);
 
   // Increase in Purchases per Customer
   const minIncreaseInPurchasesPerCustomer = (
-    (+purchase_per_customer *
-      selectedStrategic?.min_Increase_in_purchases_per_customer) /
-    100
+    +purchase_per_customer *
+    (selectedStrategic?.min_Increase_in_purchases_per_customer /
+      100)
   ).toFixed(2);
   const maxIncreaseInPurchasesPerCustomer = (
-    (+purchase_per_customer *
-      selectedStrategic?.max_Increase_in_purchases_per_customer) /
-    100
+    +purchase_per_customer *
+    (selectedStrategic?.max_Increase_in_purchases_per_customer /
+      100)
   ).toFixed(2);
 
   // Percentage of Customers Who Become Members
-  // const minPercentageOfCustomersWhoBecomeMembers =
-  //   customers * selectedStrategic?.min_Membership_conversion_percentage;
   const minPercentageOfCustomersWhoBecomeMembers = (
-    (customers * selectedStrategic?.min_Membership_conversion_percentage) /
-    100
+    customers * (selectedStrategic?.min_Membership_conversion_percentage /
+      100)
   ).toFixed(2);
   const maxPercentageOfCustomersWhoBecomeMembers = (
-    (customers * selectedStrategic?.max_Membership_conversion_percentage) /
-    100
+    customers * (selectedStrategic?.max_Membership_conversion_percentage /
+      100)
   ).toFixed(2);
 
   // Percentage of Customers Who Refer Friends
   const minPercentageOfCustomersWhoReferFriends = (
-    (customers * selectedStrategic?.min_referral_rate_percentage) /
-    100
+    customers * (selectedStrategic?.min_referral_rate_percentage / 100)
   ).toFixed(2);
   const maxPercentageOfCustomersWhoReferFriends = (
-    (customers * selectedStrategic?.max_referral_rate_percentage) /
-    100
+    customers * (selectedStrategic?.max_referral_rate_percentage /
+      100)
   ).toFixed(2);
 
   const priceFormater = (price) => {
@@ -257,7 +253,7 @@ const Result = () => {
                 </div>
                 <div>
                   <h6 className="text-black font-medium">AOV</h6>
-                  <p className="text-black font-normal">{aov}$</p>
+                  <p className="text-black font-normal">${aov}</p>
                 </div>
                 <div>
                   <h6 className="text-black font-medium">Gross margin</h6>
@@ -283,7 +279,7 @@ const Result = () => {
               Current annual revenue generated
             </p>
             <div className="bg-[#5A79ED4D] h-9 w-full flex justify-start items-center rounded-md px-5">
-              $420.850
+              {priceFormater(aov * orders)}
             </div>
           </div>
         </section>

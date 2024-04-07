@@ -58,9 +58,13 @@ const SlideSecond = ({
       </div>
       <div className="absolute bottom-6 right-6">
         <button
-          className="bg-[#5A79ED] text-white px-12 py-2 rounded-full shadow-md font-semibold text-base"
+          className={`px-12 py-2 rounded-full shadow-md font-semibold text-base 
+          ${selectedIndustry === null
+              ? 'bg-gray-400 text-gray-700'
+              : 'bg-[#5A79ED] text-white'
+            }`}
           onClick={onNext}
-          disabled={!selectedIndustry || !selectedMargin}
+          disabled={selectedIndustry === null}
         >
           Next
         </button>

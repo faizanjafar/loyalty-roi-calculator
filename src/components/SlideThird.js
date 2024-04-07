@@ -8,6 +8,7 @@ const SlideThird = ({
   selectedIndustry,
   selectIndustry,
 }) => {
+  const category = localStorage.getItem("category");
   return (
     <div className="bg-white w-full rounded-xl py-10 px-12 h-full relative">
       <h4 className="text-black font-semibold text-2xl mb-6">
@@ -30,8 +31,13 @@ const SlideThird = ({
       </div>
       <div className="absolute bottom-6 right-6">
         <button
-          className="bg-[#5A79ED] text-white px-12 py-2 rounded-full shadow-md font-semibold text-base"
+          className={`px-12 py-2 rounded-full shadow-md font-semibold text-base 
+            ${category === null
+              ? 'bg-gray-400 text-gray-700'
+              : 'bg-[#5A79ED] text-white'
+            }`}
           onClick={onNext}
+          disabled={category === null}
         >
           Next
         </button>

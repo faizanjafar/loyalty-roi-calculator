@@ -14,7 +14,7 @@ const Slider = ({
     <div className="flex flex-col w-11/12">
       <div className="flex justify-between items-center pb-2">
         <h6 className="text-lg font-normal">{title}</h6>
-        <div className="flex justify-end items-center h-6 w-16 border rounded-3xl shadow px-2">
+        <div className="flex justify-end items-center h-6 w-28 border rounded-3xl shadow px-2">
           <p className="text-black font-normal text-base">{Aov ? `$ ${sliderValue}` : sliderValue}</p>
         </div>
       </div>
