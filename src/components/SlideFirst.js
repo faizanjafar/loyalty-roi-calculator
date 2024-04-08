@@ -39,9 +39,9 @@ const SlideFirst = ({ onNext }) => {
   }, []);
 
   const gradients = {
-    ordersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.ordersValue / 10000000) * 100}%, #B20DFF ${(inputs.ordersValue / 1000000) * 80}%, #ccc 0%)`,
-    customersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.customersValue / 1000000) * 100}%, #FFC700 ${(inputs.customersValue / 200000) * 80}%, #ccc 0%)`,
-    aovValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.aovValue / 5000) * 100}%, #FFC700 ${(inputs.aovValue / 500) * 80}%, #ccc 0%)`,
+    ordersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.ordersValue / 10000000) * 100}%, #B20DFF ${(inputs.ordersValue / 10000000) * 80}%, #ccc 0%)`,
+    customersValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.customersValue / 1000000) * 100}%, #FFC700 ${(inputs.customersValue / 1000000) * 80}%, #ccc 0%)`,
+    aovValue: `linear-gradient(86.71deg, #00E8DA 0%, #B20DFF ${(inputs.aovValue / 5000) * 100}%, #FFC700 ${(inputs.aovValue / 5000) * 80}%, #ccc 0%)`,
   };
 
   const purchase_per_customer = localStorage.getItem("purchase_per_customer");
