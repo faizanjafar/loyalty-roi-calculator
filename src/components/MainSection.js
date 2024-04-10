@@ -146,6 +146,9 @@ const MainSection = ({ currentSlide, handleNext, handleBack }) => {
             <h1 className="text-white text-3xl font-semibold">
               Learn More About The Most Advanced Loyalty Engine In The Market
             </h1>
+            <button className="px-12 py-2 rounded-full shadow-md font-semibold text-base bg-[#5A79ED] text-white">
+              Get demo
+            </button>
             <img src="/images/logo.png" className="h-44 pr-20" alt="" />
           </section>
         )}

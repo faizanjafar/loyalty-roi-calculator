@@ -41,10 +41,11 @@ const Result = () => {
 
   const firstSlide = JSON.parse(localStorage.getItem("first_slide"));
   const margin = localStorage.getItem("margin");
-  const aov = firstSlide.aovValue;
-  const orders = firstSlide.ordersValue;
+  const aov = firstSlide?.aovValue;
+  const orders = firstSlide?.ordersValue;
   const purchase_per_customer = localStorage.getItem("purchase_per_customer");
-  const customers = firstSlide.customersValue;
+  const website = localStorage.getItem("userDetails");
+  const customers = firstSlide?.customersValue;
 
   // Incremental Revenue Percentage
   const minIRP = (
@@ -66,43 +67,42 @@ const Result = () => {
 
   // Increase in AOV
   const minIncreaseInAOV = (
-    +aov * (selectedStrategic?.min_Increase_in_aov_percentage /
-      100)
+    +aov *
+    (selectedStrategic?.min_Increase_in_aov_percentage / 100)
   ).toFixed(2);
   const maxIncreaseInAOV = (
-    +aov * (selectedStrategic?.max_Increase_in_aov_percentage /
-      100)
+    +aov *
+    (selectedStrategic?.max_Increase_in_aov_percentage / 100)
   ).toFixed(2);
 
   // Increase in Purchases per Customer
   const minIncreaseInPurchasesPerCustomer = (
     +purchase_per_customer *
-    (selectedStrategic?.min_Increase_in_purchases_per_customer /
-      100)
+    (selectedStrategic?.min_Increase_in_purchases_per_customer / 100)
   ).toFixed(2);
   const maxIncreaseInPurchasesPerCustomer = (
     +purchase_per_customer *
-    (selectedStrategic?.max_Increase_in_purchases_per_customer /
-      100)
+    (selectedStrategic?.max_Increase_in_purchases_per_customer / 100)
   ).toFixed(2);
 
   // Percentage of Customers Who Become Members
   const minPercentageOfCustomersWhoBecomeMembers = (
-    customers * (selectedStrategic?.min_Membership_conversion_percentage /
-      100)
+    customers *
+    (selectedStrategic?.min_Membership_conversion_percentage / 100)
   ).toFixed(2);
   const maxPercentageOfCustomersWhoBecomeMembers = (
-    customers * (selectedStrategic?.max_Membership_conversion_percentage /
-      100)
+    customers *
+    (selectedStrategic?.max_Membership_conversion_percentage / 100)
   ).toFixed(2);
 
   // Percentage of Customers Who Refer Friends
   const minPercentageOfCustomersWhoReferFriends = (
-    customers * (selectedStrategic?.min_referral_rate_percentage / 100)
+    customers *
+    (selectedStrategic?.min_referral_rate_percentage / 100)
   ).toFixed(2);
   const maxPercentageOfCustomersWhoReferFriends = (
-    customers * (selectedStrategic?.max_referral_rate_percentage /
-      100)
+    customers *
+    (selectedStrategic?.max_referral_rate_percentage / 100)
   ).toFixed(2);
 
   const priceFormater = (price) => {
@@ -154,7 +154,7 @@ const Result = () => {
         <div className="flex items-start mb-8">
           <p className="text-white font-normal text-base w-4/5 tracking-wide">
             Here’s a look at how Loiale’s loyalty engine can impact your
-            business on https://website.com
+            business on {JSON.parse(website).website_link}
           </p>
           <div className="flex flex-col items-start gap-3">
             <button className="text-white font-semibold text-base flex gap-2 items-center">

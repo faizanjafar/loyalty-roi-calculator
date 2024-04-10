@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ImageSection from "./ImageSection";
 
 const SlideSecond = ({
@@ -59,12 +59,13 @@ const SlideSecond = ({
       <div className="absolute bottom-6 right-6">
         <button
           className={`px-12 py-2 rounded-full shadow-md font-semibold text-base 
-          ${selectedIndustry === null
-              ? 'bg-gray-400 text-gray-700'
-              : 'bg-[#5A79ED] text-white'
-            }`}
+          ${
+            selectedIndustry === null || selectedMargin === null
+              ? "bg-gray-400 text-gray-700"
+              : "bg-[#5A79ED] text-white"
+          }`}
           onClick={onNext}
-          disabled={selectedIndustry === null}
+          disabled={selectedIndustry === null || selectedMargin === null}
         >
           Next
         </button>
