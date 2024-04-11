@@ -14,13 +14,16 @@ const Slider = ({
     <div className="flex flex-col w-11/12">
       <div className="flex justify-between items-center pb-2">
         <h6 className="text-lg font-normal">{title}</h6>
-        <input
-          type="number"
-          value={Aov ? sliderValue : sliderValue}
-          name={name}
-          onChange={handleSliderChange}
-          className="w-28 h-6 shadow px-2 rounded-3xl"
-        />
+        <div className="flex gap-2 shadow px-2 rounded-3xl">
+          <input
+            type="number"
+            value={Aov ? sliderValue : sliderValue}
+            name={name}
+            onChange={handleSliderChange}
+            className="w-24 h-6 border-none outline-none"
+          />
+          <p className="text-sm font-normal text-black">{Aov ? "US $" : ""}</p>
+        </div>
       </div>
       <input
         type="range"

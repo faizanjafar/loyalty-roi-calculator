@@ -11,12 +11,12 @@ const SlideThird = ({
   const category = localStorage.getItem("category");
   return (
     <div className="bg-white w-full rounded-xl py-10 px-12 h-full relative">
-      <h4 className="text-black font-semibold text-2xl mb-6">
+      <h4 className="text-black font-semibold ms:text-2xl text-xl mb-6">
         {selectIndustry
           ? `Choose your Category in the ${selectIndustry.text}`
           : `Choose your Industry:`}
       </h4>
-      <div className="w-[85%] flex gap-4 flex-wrap">
+      <div className="ms:w-[85%] w-full flex gap-4 flex-wrap">
         {industries.map((industry, index) => (
           <ImageSection
             key={index}
@@ -29,7 +29,7 @@ const SlideThird = ({
           />
         ))}
       </div>
-      <div className="absolute bottom-6 right-6">
+      <div className="md:absolute relative md:bottom-6 md:right-6 md:p-0 pt-6">
         <button
           className={`px-12 py-2 rounded-full shadow-md font-semibold text-base 
             ${category === null

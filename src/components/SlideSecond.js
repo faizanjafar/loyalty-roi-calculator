@@ -15,8 +15,8 @@ const SlideSecond = ({
       <h4 className="text-black font-semibold text-2xl mb-6">
         Choose your Industry:
       </h4>
-      <div className="flex items-start gap-5">
-        <div className="w-[85%] flex gap-4 flex-wrap">
+      <div className="flex items-start gap-5 sm:flex-nowrap flex-wrap">
+        <div className="sm:w-[85%] w-full flex gap-4 flex-wrap">
           {industries.map((industry, index) => (
             <ImageSection
               key={index}
@@ -31,7 +31,7 @@ const SlideSecond = ({
             />
           ))}
         </div>
-        <div className="w-[20%]">
+        <div className="sm:w-[20%] w-full">
           <p className="text-black font-normal text-base mb-6">
             Your gross margin:
           </p>
@@ -47,6 +47,7 @@ const SlideSecond = ({
                   checked={selectedMargin === m.text}
                   onChange={() => {
                     localStorage.setItem("margin", m.value);
+                    localStorage.setItem("margin_text", m.text);
                     setSelectedMargin(m.text);
                   }}
                 />
@@ -56,7 +57,7 @@ const SlideSecond = ({
           </div>
         </div>
       </div>
-      <div className="absolute bottom-6 right-6">
+      <div className="md:absolute relative md:bottom-6 md:right-6 md:p-0 pt-6">
         <button
           className={`px-12 py-2 rounded-full shadow-md font-semibold text-base 
           ${

@@ -28,7 +28,7 @@ function App() {
         handleBack={handleBack}
       />
       {currentSlide === 5 && (
-        <div className="w-2/5 absolute -z-10">
+        <div className="md:w-2/5 absolute -z-10">
           <img src="/images/slide5.png" alt="" />
         </div>
       )}

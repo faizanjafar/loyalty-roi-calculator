@@ -45,10 +45,10 @@ const SlideFourth = ({ onNext }) => {
 
   return (
     <div className="h-full w-full">
-      <div className="bg-white rounded-tl-xl rounded-tr-xl py-20 px-12 relative">
+      <div className="bg-white rounded-tl-xl rounded-tr-xl sm:py-20 py-14 sm:px-12 px-8 relative">
         <div>
           <Slider
-            title={<h6 className="text-black font-semibold text-xl">Which percentage (%) of your sales are online?</h6>}
+            title={<h6 className="text-black font-semibold sm:text-xl text-lg">Which percentage (%) of your sales are online?</h6>}
             subtitle=""
             sliderValue={sliderValue}
             handleSliderChange={handleSlide}
@@ -61,12 +61,12 @@ const SlideFourth = ({ onNext }) => {
           </p>
         </div>
       </div>
-      <div className="bg-[#2312DA] py-16 px-8 rounded-bl-xl rounded-br-xl flex gap-4">
+      <div className="bg-[#2312DA] sm:py-16 py-10 px-8 rounded-bl-xl rounded-br-xl flex gap-4 flex-wrap">
         <input
           type="email"
           name="email"
           placeholder="Your Email"
-          className="p-2 rounded-lg text-black"
+          className="p-2 rounded-lg text-black sm:w-auto w-full"
           value={userDetails.email}
           onChange={handleChange}
         />
@@ -74,7 +74,7 @@ const SlideFourth = ({ onNext }) => {
           type="url"
           name="website_link"
           placeholder="Your website"
-          className="p-2 rounded-lg text-black"
+          className="p-2 rounded-lg text-black sm:w-auto w-full"
           value={userDetails.website_link}
           onChange={handleChange}
         />

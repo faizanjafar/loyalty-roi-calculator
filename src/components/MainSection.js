@@ -77,18 +77,18 @@ const MainSection = ({ currentSlide, handleNext, handleBack }) => {
       <div
         className={`bg-[#5A79ED] w-full flex justify-start ${
           currentSlide <= 4
-            ? "items-center h-[90vh]"
-            : "items-start pt-44 h-[110vh] flex-col"
+            ? "items-center sm:py-44 py-36"
+            : "items-start pt-44 h-[130vh] flex-col"
         }`}
       >
         <div className="container mx-auto relative">
           {currentSlide <= 4 ? (
-            <div className="flex justify-between items-start">
-              <div className="w-[35%] flex flex-col justify-center items-start gap-4">
-                <h1 className="text-white text-5xl font-bold ">
+            <div className="flex 2xl:justify-between xl:gap-0 gap-16 items-start xl:flex-nowrap flex-wrap sm:p-0 p-6">
+              <div className="2xl:w-[35%] xl:w-2/5 w-full flex flex-col justify-center items-start gap-4">
+                <h1 className="text-white sm:text-5xl text-4xl font-bold ">
                   Loyalty ROI Calculator
                 </h1>
-                <p className="text-white text-lg flex flex-col gap-3">
+                <p className="text-white sm:text-lg text-base flex flex-col gap-3">
                   Slash acquisition costs and skyrocket your revenue with
                   Loiale's loyalty magic. See your potential gains in a flash
                   with our quick ROI (return on investment) calculator powered
@@ -96,7 +96,7 @@ const MainSection = ({ currentSlide, handleNext, handleBack }) => {
                   <p>Dive in now—let's unlock your brand's loyalty power!</p>
                 </p>
               </div>
-              <div className="w-[55%]">
+              <div className="2xl:w-[55%] xl:w-2/5">
                 {currentSlide > 1 && (
                   <img
                     src="/images/icons/back_icon.png"
@@ -105,7 +105,7 @@ const MainSection = ({ currentSlide, handleNext, handleBack }) => {
                     onClick={handleBack}
                   />
                 )}
-                <div className="flex justify-start items-center h-[488px] w-[734px]">
+                <div className="flex justify-start items-center sm:h-[488px] 2xl:w-[734px] xl:w-[690px] md:w-[690px] sm:w-[630px] w-full sm:flex-nowrap flex-wrap">
                   {currentSlide === 1 && <SlideFirst onNext={handleNext} />}
                   {currentSlide === 2 && (
                     <SlideSecond
@@ -134,22 +134,24 @@ const MainSection = ({ currentSlide, handleNext, handleBack }) => {
           ) : (
             <Result />
           )}
-          <div className="h-60 w-60 absolute -bottom-72">
-            {currentSlide === 1 && <img src="/images/slide1.png" alt="" />}
-            {currentSlide === 2 && <img src="/images/slide2.png" alt="" />}
-            {currentSlide === 3 && <img src="/images/slide3.png" alt="" />}
-            {currentSlide === 4 && <img src="/images/slide4.png" alt="" />}
-          </div>
+          {currentSlide < 4 && (
+            <div className="sm:h-60 h-44 sm:w-60 w-44 absolute sm:-bottom-72 -bottom-56 sm:left-0 left-4">
+              {currentSlide === 1 && <img src="/images/slide1.png" alt="" />}
+              {currentSlide === 2 && <img src="/images/slide2.png" alt="" />}
+              {currentSlide === 3 && <img src="/images/slide3.png" alt="" />}
+              {currentSlide === 4 && <img src="/images/slide4.png" alt="" />}
+            </div>
+          )}
         </div>
         {currentSlide > 4 && (
-          <section className="bg-[#414141] px-7 w-4/5 relative z-50 mt-10 flex justify-between items-center">
-            <h1 className="text-white text-3xl font-semibold">
+          <section className="bg-[#414141] px-7 lg:w-4/5 w-11/12 relative z-50 mt-24 hidden justify-between items-center md:flex ">
+            <h1 className="text-white text-3xl font-semibold w-1/2">
               Learn More About The Most Advanced Loyalty Engine In The Market
             </h1>
             <button className="px-12 py-2 rounded-full shadow-md font-semibold text-base bg-[#5A79ED] text-white">
               Get demo
             </button>
-            <img src="/images/logo.png" className="h-44 pr-20" alt="" />
+            <img src="/images/logo.png" className="h-44 pr-16" alt="" />
           </section>
         )}
       </div>

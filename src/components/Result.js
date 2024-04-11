@@ -41,6 +41,7 @@ const Result = () => {
 
   const firstSlide = JSON.parse(localStorage.getItem("first_slide"));
   const margin = localStorage.getItem("margin");
+  const marginText= localStorage.getItem("margin_text");
   const aov = firstSlide?.aovValue;
   const orders = firstSlide?.ordersValue;
   const purchase_per_customer = localStorage.getItem("purchase_per_customer");
@@ -149,14 +150,14 @@ const Result = () => {
 
   return (
     <>
-      <div className="w-[70%] mx-auto z-50">
+      <div className="2xl:w-[70%] xl:w-4/5 w-full mx-auto z-50 px-6">
         <h3 className="text-white font-semibold text-5xl mb-4">Results</h3>
-        <div className="flex items-start mb-8">
-          <p className="text-white font-normal text-base w-4/5 tracking-wide">
+        <div className="flex items-start mb-8 md:flex-nowrap flex-wrap md:gap-0 gap-4">
+          <p className="text-white font-normal text-base md:w-4/5 tracking-wide">
             Here’s a look at how Loiale’s loyalty engine can impact your
             business on {JSON.parse(website).website_link}
           </p>
-          <div className="flex flex-col items-start gap-3">
+          <div className="flex md:flex-col gap-7 items-start md:gap-3">
             <button className="text-white font-semibold text-base flex gap-2 items-center">
               <img src="/images/icons/external-link.svg" alt="" />
               Share Report
@@ -172,24 +173,24 @@ const Result = () => {
           </div>
         </div>
         <section className="bg-[#2312DA] rounded-xl shadow-xl">
-          <div className="py-8 text-center flex flex-col gap-3 border-b-2 border-gray-800 border-opacity-25">
-            <h3 className="text-xl text-white font-semibold">
+          <div className="p-8 text-center flex flex-col gap-3 border-b-2 border-gray-800 border-opacity-25 ">
+            <h3 className="md:text-xl text-lg text-white font-semibold">
               Incremental revenue lift with Loiale loyalty engine
             </h3>
-            <h2 className="text-4xl text-white font-semibold">
+            <h2 className="md:text-4xl text-3xl text-white font-semibold">
               {` ${minIPRFormated}-${maxIPRFormated}`}
             </h2>
           </div>
-          <div className="py-8 text-center flex flex-col gap-3">
-            <h3 className="text-xl text-white font-semibold">
+          <div className="p-8 text-center flex flex-col gap-3">
+            <h3 className="md:text-xl text-lg text-white font-semibold">
               Total projected annual revenue with Loiale loyalty engine
             </h3>
             <h5 className="text-xl text-white font-semibold">
               {`${minTPARFormated}-${maxTPARFormated}`}
             </h5>
           </div>
-          <div className="bg-white rounded-bl-xl rounded-br-xl px-16 py-8 flex flex-col gap-6 ">
-            <div className="grid grid-cols-2 w-full gap-6 pb-8">
+          <div className="bg-white rounded-bl-xl rounded-br-xl md:px-16 px-8 py-8 flex flex-col gap-6 ">
+            <div className="grid lg:grid-cols-2 grid-cols-1 w-full gap-6 pb-8">
               {Result.map((result, index) => (
                 <ResultCard
                   key={index}
@@ -208,8 +209,8 @@ const Result = () => {
             </div>
           </div>
         </section>
-        <section className="shadow-xl rounded-xl p-10 mt-10 bg-white">
-          <div className=" flex flex-col gap-4 items-start w-11/12">
+        <section className="shadow-xl rounded-xl sm:p-10 p-6 mt-10 bg-white">
+          <div className=" flex flex-col gap-4 items-start md:w-11/12 w-full">
             <h4 className="text-xl font-semibold">
               Strategic Avenues For Your Brand: 📈
             </h4>
@@ -224,8 +225,8 @@ const Result = () => {
               ))}
           </div>
         </section>
-        <section className="flex justify-between items-start h-[362px]">
-          <div className="w-[60%] shadow-xl rounded-xl p-10 mt-10 bg-white h-full">
+        <section className="flex justify-between items-start md:h-[362px] flex-wrap">
+          <div className="lg:w-[60%] w-full shadow-xl rounded-xl md:p-10 p-6 mt-10 bg-white h-full">
             <h6 className="font-semibold text-black text-xl mb-3">
               Next Steps:{" "}
             </h6>
@@ -243,7 +244,7 @@ const Result = () => {
               ))}
             </ul>
           </div>
-          <div className="w-[35%] shadow-xl rounded-xl p-6 mt-10 bg-white h-full">
+          <div className="lg:w-[35%] w-full shadow-xl rounded-xl p-6 mt-10 bg-white h-full">
             <h6 className="text-black font-medium">Your inputs:</h6>
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="flex flex-col gap-3">
@@ -257,7 +258,7 @@ const Result = () => {
                 </div>
                 <div>
                   <h6 className="text-black font-medium">Gross margin</h6>
-                  <p className="text-black font-normal">{margin}</p>
+                  <p className="text-black font-normal">{marginText}</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3">
@@ -283,6 +284,19 @@ const Result = () => {
             </div>
           </div>
         </section>
+        <section className="bg-[#414141] px-7 w-full mt-12 flex justify-between item-start md:hidden flex-col py-6 gap-6">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-white text-2xl font-semibold">
+              Learn More About The Most Advanced Loyalty Engine In The Market
+            </h1>
+            <button className="px-12 py-2 rounded-full shadow-md font-semibold text-base bg-[#5A79ED] text-white">
+              Get demo
+            </button>
+          </div>
+          <img src="/images/logo.png" className="h-36 w-28" alt="" />
+        </section>
+        <br />
+        <br />
       </div>
     </>
   );
